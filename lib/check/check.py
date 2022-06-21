@@ -74,6 +74,19 @@ def list_groups(provider: str) -> list:
         print(f"\t - {group_description} -- [{group}] ")
 
 
+def list_checks(provider: str, service: str, check_name: str):
+
+    # Open Metadata JSON
+    metadata_file = f"providers/{provider}/services/{service}/{check_name}"
+    f = open_file(metadata_file + metadata_file)
+    # Parse JSON
+    check_metadata = parse_json_file(f)
+    print(check_metadata)
+    # print(f"CheckName: {check_name} - {service}")
+
+
+# Check_Description - Check_Service [Check Severity]
+
 # Parse groups from groups.json
 def parse_groups_from_file(group_file: str) -> Any:
     f = open_file(group_file)

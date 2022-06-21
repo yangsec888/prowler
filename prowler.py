@@ -34,7 +34,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "-S", "--excluded-services", nargs="+", help="Services to exclude"
     )
-
+    parser.add_argument("-l", "--list-checks", action="store_true", help="List checks")
     # Arguments to list checks
     # The following arguments needs to be set exclusivelly
     # list = parser.add_mutually_exclusive_group()
